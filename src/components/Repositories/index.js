@@ -1,30 +1,29 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import connect from 'unstated-connect';
 
 import RepositoriesContainer from '../../containers/RepositoriesContainer';
 
-const Repositories = ({ organization, language, containers: [repositoriesContainer] }) => {
-  let {
-    state: {
-      repositories,
-    },
-  } = repositoriesContainer;
-
-  useEffect(() => {
-    repositoriesContainer.fetchData(organization);
-  }, [organization, repositoriesContainer]);
-
-  if (language) {
-    repositories = repositories.filter((repo) => {
-      return repo.language === language;
-    });
-  }
-
+const Repositories = ({ repositories }) => {
   return (
-    <ul>
-      {repositories.map(repository => <li
-        key={repository.name}>{repository.name} ({repository.stargazers_count})</li>)}
-    </ul>
+    <table className="table">
+      <tbody>
+      {repositories.map(repository => (
+        <tr
+          key={repository.name}>
+          <td>
+            <Link to={`/repository/${repository.full_name}`}>{repository.name}</Link>
+          </td>
+          <td>
+            {repository.language}
+          </td>
+          <td>
+            {repository.stargazers_count}
+          </td>
+        </tr>
+      ))}
+      </tbody>
+    </table>
   );
 };
 
