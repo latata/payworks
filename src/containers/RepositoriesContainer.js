@@ -1,6 +1,6 @@
 import { Container } from 'unstated';
 
-import repositoriesService from '../service/repositories';
+import repositoriesService from '../services/repositories';
 
 export default class RepositoriesContainer extends Container {
   state = {

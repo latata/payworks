@@ -1,7 +1,7 @@
 import axios from 'axios';
 import AxiosMockAdapter from 'axios-mock-adapter';
 
-import repositoriesService from '../service/repositories';
+import repositoriesService from '../services/repositories';
 import RepositoriesContainer from './RepositoriesContainer';
 
 const testOrg = 'test-org';

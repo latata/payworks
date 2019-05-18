@@ -1,68 +1,47 @@
+Homework assignment for Payworks recruitment process
+
+## How to run it locally?
+Use `yarn` or `npm install` to install all dependencies.
+
+`yarn start` or `npm start` to run the app\
+`yarn test` to run unit/integration tests\
+`yarn test:e2e` to run e2e tests (**run the app first!**)
+
+## Project structure
+* `e2e` - end to end tests
+* `public` - public files
+* `src` - source
+	* `components` - React components
+		* `*Route` root components for each route
+	* `containers` - `unstated` containers to store the state of the application
+	* `hooks` - React hooks
+		* `useDebounce` - hooks-based debounce functionality
+	* `services` - XHR requests
+* `index.js` - render's the app
+
+
+## Technologies
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+I chose React framework to write this application because it's the technology which I recently worked 
+the most with and I think it's great for small projects like this one as well as for large applications.
 
-In the project directory, you can run:
+As a state management library I chose `unstated` for two reasons: 
+* It seemed to be very simple 
+(not too complex for such small app).
+* I've never used it before and I wanted to learn something new.
 
-### `npm start`
+### Dependencies
+* `axios` - for XHR requests
+* `bootstrap` - to make it look a little bit nicer
+* `react-router-dom` - routing library for React
+* `unstated` - simple library for state management
+* `unstated-connect` - to easily connect components with unstated containers
+* `lodash.debounce` - for debounce functionality used for organization's input 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Devlopment dependencies
+* `jest` - testing framework integrated into Create React App
+* `puppeteer` - to run e2e tests in headless Chrome
+* `jest-puppeteer` - for writing e2e tests and run them using Puppeteer 
+* `react-testing-library` and `react-hooks-testing-library` - testing utils
+* `sinon` - testing utils used in this project just for faking timers/setTimeout functionality
