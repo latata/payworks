@@ -4,6 +4,7 @@ import Repositories from '../Repositories';
 import RepositoriesContainer from '../../containers/RepositoriesContainer';
 import useDebounce from '../../hooks/useDebounce';
 import Spinner from '../Spinner';
+import Filters from '../Filters';
 
 function RepositoriesRoute({ containers: [repositoriesContainer] }) {
   const { state: { availableLanguages, language, organization, status } } = repositoriesContainer;
@@ -12,10 +13,12 @@ function RepositoriesRoute({ containers: [repositoriesContainer] }) {
   const allLanguages = ['', ...availableLanguages]; // empty string means all
 
   const onOrganizationChange = (organization) => {
-    repositoriesContainer.setState({
-      organization,
-    });
+    repositoriesContainer.setState({ organization });
     setDebounceOrganization(organization);
+  };
+
+  const onLanguageChange = (language) => {
+    repositoriesContainer.setState({ language });
   };
 
   useEffect(() => {
@@ -33,27 +36,13 @@ function RepositoriesRoute({ containers: [repositoriesContainer] }) {
       <h1>
         Organization's repositories
       </h1>
-      <div className="row">
-        <div className="form-group col-sm">
-          <label htmlFor="organization">Organization</label>
-          <input
-            type="text"
-            className="form-control"
-            id="organization"
-            value={organization}
-            onChange={(event) => onOrganizationChange(event.target.value)} />
-        </div>
-        <div className="form-group col-sm">
-          <label htmlFor="language">Language</label>
-          <select
-            className="form-control"
-            id="language"
-            value={language}
-            onChange={(event) => repositoriesContainer.setState({ language: event.target.value })}>
-            {allLanguages.map(lang => <option key={lang} value={lang}>{lang || 'ALL'}</option>)}
-          </select>
-        </div>
-      </div>
+      <Filters
+        organization={organization}
+        language={language}
+        languages={allLanguages}
+        onLanguageChange={onLanguageChange}
+        onOrganizationChange={onOrganizationChange}
+      />
       {status === 'loading' && <Spinner />}
       {status === 'loaded' && <Repositories repositories={repositories} />}
       {status === 'error' && <div>Unexpected error</div>}

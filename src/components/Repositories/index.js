@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Repositories = ({ repositories }) => {
+function Repositories({ repositories }) {
   return (
-    <table className="table">
+    <table className="table" data-testid="repositories-list">
       <tbody>
       {repositories.map(repository => (
         <tr
@@ -22,6 +22,6 @@ const Repositories = ({ repositories }) => {
       </tbody>
     </table>
   );
-};
+}
 
 export default Repositories;

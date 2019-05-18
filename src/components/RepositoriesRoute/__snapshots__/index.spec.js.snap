@@ -108,6 +108,7 @@ exports[`RepositoriesRoute fetches repositories on mount and on organization upd
     </div>
     <table
       class="table"
+      data-testid="repositories-list"
     >
       <tbody>
         <tr>
@@ -204,6 +205,7 @@ exports[`RepositoriesRoutes filters repositories by language 1`] = `
     </div>
     <table
       class="table"
+      data-testid="repositories-list"
     >
       <tbody>
         <tr>
