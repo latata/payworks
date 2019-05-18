@@ -1,37 +1,44 @@
 {
-  "name": "payworks",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "axios": "^0.18.0",
-    "bootstrap": "^4.3.1",
-    "lodash.debounce": "^4.0.8",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.1",
-    "unstated": "^2.1.1",
-    "unstated-connect": "^0.0.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "payworks",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"axios": "^0.18.0",
+		"bootstrap": "^4.3.1",
+		"lodash.debounce": "^4.0.8",
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6",
+		"react-router-dom": "^5.0.0",
+		"react-scripts": "3.0.1",
+		"unstated": "^2.1.1",
+		"unstated-connect": "^0.0.3"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"axios-mock-adapter": "^1.16.0",
+		"react-hooks-testing-library": "^0.5.0",
+		"react-test-renderer": "^16.8.6",
+		"react-testing-library": "^7.0.0",
+		"sinon": "^7.3.2"
+	}
 }

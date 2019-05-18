@@ -1,0 +1,228 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RepositoriesRoute fetches repositories on mount and on organization update 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <h1>
+      Organization's repositories
+    </h1>
+    <div
+      class="row"
+    >
+      <div
+        class="form-group col-sm"
+      >
+        <label
+          for="organization"
+        >
+          Organization
+        </label>
+        <input
+          class="form-control"
+          id="organization"
+          type="text"
+          value="payworks"
+        />
+      </div>
+      <div
+        class="form-group col-sm"
+      >
+        <label
+          for="language"
+        >
+          Language
+        </label>
+        <select
+          class="form-control"
+          id="language"
+        >
+          <option
+            value=""
+          >
+            ALL
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`RepositoriesRoute fetches repositories on mount and on organization update 2`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <h1>
+      Organization's repositories
+    </h1>
+    <div
+      class="row"
+    >
+      <div
+        class="form-group col-sm"
+      >
+        <label
+          for="organization"
+        >
+          Organization
+        </label>
+        <input
+          class="form-control"
+          id="organization"
+          type="text"
+          value="test-org"
+        />
+      </div>
+      <div
+        class="form-group col-sm"
+      >
+        <label
+          for="language"
+        >
+          Language
+        </label>
+        <select
+          class="form-control"
+          id="language"
+        >
+          <option
+            value=""
+          >
+            ALL
+          </option>
+          <option
+            value="javascript"
+          >
+            javascript
+          </option>
+          <option
+            value="php"
+          >
+            php
+          </option>
+        </select>
+      </div>
+    </div>
+    <table
+      class="table"
+    >
+      <tbody>
+        <tr>
+          <td>
+            <a
+              href="/repository/undefined"
+            >
+              repo2
+            </a>
+          </td>
+          <td>
+            php
+          </td>
+          <td>
+            2
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a
+              href="/repository/undefined"
+            >
+              repo
+            </a>
+          </td>
+          <td>
+            javascript
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`RepositoriesRoutes filters repositories by language 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <h1>
+      Organization's repositories
+    </h1>
+    <div
+      class="row"
+    >
+      <div
+        class="form-group col-sm"
+      >
+        <label
+          for="organization"
+        >
+          Organization
+        </label>
+        <input
+          class="form-control"
+          id="organization"
+          type="text"
+          value="test-org"
+        />
+      </div>
+      <div
+        class="form-group col-sm"
+      >
+        <label
+          for="language"
+        >
+          Language
+        </label>
+        <select
+          class="form-control"
+          id="language"
+        >
+          <option
+            value=""
+          >
+            ALL
+          </option>
+          <option
+            value="javascript"
+          >
+            javascript
+          </option>
+          <option
+            value="php"
+          >
+            php
+          </option>
+        </select>
+      </div>
+    </div>
+    <table
+      class="table"
+    >
+      <tbody>
+        <tr>
+          <td>
+            <a
+              href="/repository/undefined"
+            >
+              repo
+            </a>
+          </td>
+          <td>
+            javascript
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;

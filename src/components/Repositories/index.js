@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import connect from 'unstated-connect';
-
-import RepositoriesContainer from '../../containers/RepositoriesContainer';
 
 const Repositories = ({ repositories }) => {
   return (
@@ -27,4 +24,4 @@ const Repositories = ({ repositories }) => {
   );
 };
 
-export default connect([RepositoriesContainer])(Repositories);
+export default Repositories;

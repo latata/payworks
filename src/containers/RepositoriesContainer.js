@@ -43,17 +43,15 @@ export default class RepositoriesContainer extends Container {
         loadedOrganization: org,
         status: 'loaded',
       });
-    } catch(error) {
-      if(error.response) {
-        if(error.response.status === 404) {
-          this.setState({
-            status: 'not-found'
-          });
-        } else {
-          this.setState({
-            status: 'error'
-          });
-        }
+    } catch (error) {
+      if (error.response && error.response.status === 404) {
+        this.setState({
+          status: 'not-found'
+        });
+      } else {
+        this.setState({
+          status: 'error'
+        });
       }
     }
   };

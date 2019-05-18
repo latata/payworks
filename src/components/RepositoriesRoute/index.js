@@ -10,6 +10,7 @@ function RepositoriesRoute({ containers: [repositoriesContainer] }) {
   let { repositories } = repositoriesContainer.state;
   const [debouncedOrganization, setDebounceOrganization] = useDebounce(organization, 500);
   const allLanguages = ['', ...availableLanguages]; // empty string means all
+
   const onOrganizationChange = (organization) => {
     repositoriesContainer.setState({
       organization,
@@ -46,6 +47,7 @@ function RepositoriesRoute({ containers: [repositoriesContainer] }) {
           <label htmlFor="language">Language</label>
           <select
             className="form-control"
+            id="language"
             value={language}
             onChange={(event) => repositoriesContainer.setState({ language: event.target.value })}>
             {allLanguages.map(lang => <option key={lang} value={lang}>{lang || 'ALL'}</option>)}
