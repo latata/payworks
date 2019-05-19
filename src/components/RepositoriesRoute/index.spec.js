@@ -12,8 +12,6 @@ import RepositoriesContainer from '../../containers/RepositoriesContainer';
 // run debounced function immediately
 jest.mock('lodash.debounce', () => jest.fn(fn => fn));
 
-const repositoriesContainer = new RepositoriesContainer();
-const fetchDataStub = jest.spyOn(repositoriesContainer, 'fetchData');
 const axiosMock = new AxiosMockAdapter(axios);
 const flushPromises = () => new Promise(resolve => setTimeout(resolve));
 
@@ -30,19 +28,25 @@ axiosMock.onAny().reply(200, [
   }
 ]);
 
-afterEach(cleanup);
-
-test('RepositoriesRoute fetches repositories on mount and on organization update', async () => {
-  const defaultOrg = 'payworks';
-  const testOrg = 'test-org';
-
-  const { getByLabelText, asFragment } = render(
+function renderComponent(repositoriesContainer) {
+  return render(
     <Provider inject={[repositoriesContainer]}>
       <MemoryRouter>
         <RepositoriesRoute />
       </MemoryRouter>
     </Provider>
   );
+}
+
+afterEach(cleanup);
+
+test('RepositoriesRoute fetches repositories on mount and on organization update', async () => {
+  const repositoriesContainer = new RepositoriesContainer();
+  const fetchDataStub = jest.spyOn(repositoriesContainer, 'fetchData');
+  const defaultOrg = 'payworks';
+  const testOrg = 'test-org';
+
+  const { getByLabelText, asFragment } = renderComponent(repositoriesContainer);
 
   expect(asFragment()).toMatchSnapshot();
   expect(repositoriesContainer.state.organization).toBe(defaultOrg);
@@ -70,13 +74,8 @@ test('RepositoriesRoute fetches repositories on mount and on organization update
 });
 
 test('RepositoriesRoutes filters repositories by language', async () => {
-  const { getByLabelText, asFragment } = render(
-    <Provider inject={[repositoriesContainer]}>
-      <MemoryRouter>
-        <RepositoriesRoute />
-      </MemoryRouter>
-    </Provider>
-  );
+  const repositoriesContainer = new RepositoriesContainer();
+  const { getByLabelText, asFragment } = renderComponent(repositoriesContainer);
 
   // make sure mocked axios request replied
   await flushPromises();

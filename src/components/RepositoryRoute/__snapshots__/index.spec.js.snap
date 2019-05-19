@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RepositoryRoute fetches branches on mount 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <h1>
+      test-org/repo 
+      <small
+        class="text-muted"
+      >
+        branches
+      </small>
+    </h1>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`RepositoryRoute fetches branches on mount 2`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <h1>
+      test-org/repo 
+      <small
+        class="text-muted"
+      >
+        branches
+      </small>
+    </h1>
+    <ul>
+      <li>
+        <a
+          href="https://github.com/test-org/repo/tree/test-branch-1"
+        >
+          test-branch-1
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/test-org/repo/tree/test-branch-2"
+        >
+          test-branch-2
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/test-org/repo/tree/test-branch-3"
+        >
+          test-branch-3
+        </a>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`RepositoryRoute shows error message for 500 API response 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <h1>
+      test-org/repo 
+      <small
+        class="text-muted"
+      >
+        branches
+      </small>
+    </h1>
+    <div>
+      Unexpected error
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`RepositoryRoute shows error message for repository which does not exist 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <h1>
+      test-org/repo 
+      <small
+        class="text-muted"
+      >
+        branches
+      </small>
+    </h1>
+    <div>
+      Repository does not exist
+    </div>
+  </div>
+</DocumentFragment>
+`;

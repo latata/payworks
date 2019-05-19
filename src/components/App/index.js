@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <Route path="/" exact component={RepositoriesRoute} />
-      <Route path="/repository/:id*" exact component={RepositoryRoute} />
+      <Route path="/repository/:fullName*" exact component={RepositoryRoute} />
     </Router>
   );
 }

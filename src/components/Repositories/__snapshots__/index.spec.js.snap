@@ -9,6 +9,19 @@ Object {
         class="table"
         data-testid="repositories-list"
       >
+        <thead>
+          <tr>
+            <th>
+              Name
+            </th>
+            <th>
+              Language
+            </th>
+            <th>
+              Stars
+            </th>
+          </tr>
+        </thead>
         <tbody>
           <tr>
             <td>
@@ -49,6 +62,19 @@ Object {
       class="table"
       data-testid="repositories-list"
     >
+      <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Language
+          </th>
+          <th>
+            Stars
+          </th>
+        </tr>
+      </thead>
       <tbody>
         <tr>
           <td>

@@ -4,9 +4,10 @@ import RepositoryContainer from '../../containers/RepositoryContainer';
 import Spinner from '../Spinner';
 
 function RepositoryRoute({ match, containers: [repositoryContainer] }) {
-  const fullName = match.params.id;
+  const fullName = match.params.fullName;
   const { state: { branches, status } } = repositoryContainer;
 
+  // fetch branches
   useEffect(() => {
     repositoryContainer.fetchData(fullName);
   }, [fullName, repositoryContainer]);

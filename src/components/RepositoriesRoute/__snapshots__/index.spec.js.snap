@@ -110,6 +110,19 @@ exports[`RepositoriesRoute fetches repositories on mount and on organization upd
       class="table"
       data-testid="repositories-list"
     >
+      <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Language
+          </th>
+          <th>
+            Stars
+          </th>
+        </tr>
+      </thead>
       <tbody>
         <tr>
           <td>
@@ -170,7 +183,7 @@ exports[`RepositoriesRoutes filters repositories by language 1`] = `
           class="form-control"
           id="organization"
           type="text"
-          value="test-org"
+          value="payworks"
         />
       </div>
       <div
@@ -207,6 +220,19 @@ exports[`RepositoriesRoutes filters repositories by language 1`] = `
       class="table"
       data-testid="repositories-list"
     >
+      <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Language
+          </th>
+          <th>
+            Stars
+          </th>
+        </tr>
+      </thead>
       <tbody>
         <tr>
           <td>

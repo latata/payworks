@@ -9,8 +9,10 @@ import Filters from '../Filters';
 function RepositoriesRoute({ containers: [repositoriesContainer] }) {
   const { state: { availableLanguages, language, organization, status } } = repositoriesContainer;
   let { repositories } = repositoriesContainer.state;
+  // debounced organization to prevent XHR on each organization input change
   const [debouncedOrganization, setDebounceOrganization] = useDebounce(organization, 500);
-  const allLanguages = ['', ...availableLanguages]; // empty string means all
+  // empty string means all
+  const allLanguages = ['', ...availableLanguages];
 
   const onOrganizationChange = (organization) => {
     repositoriesContainer.setState({ organization });
@@ -21,10 +23,12 @@ function RepositoriesRoute({ containers: [repositoriesContainer] }) {
     repositoriesContainer.setState({ language });
   };
 
+  // fetch repositories on component mount and on debouncedOrganization change
   useEffect(() => {
     repositoriesContainer.fetchData(debouncedOrganization);
   }, [debouncedOrganization, repositoriesContainer]);
 
+  // filter by language
   if (language) {
     repositories = repositories.filter((repo) => {
       return repo.language === language;
